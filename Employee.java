@@ -1,34 +1,36 @@
 public class Employee{
-	public static void main(String [] args) {
-		int attendence = 1;
-		int wagePerHour = 20;
-		int fullDayWork = 8;
-		int partTimeWorker = 8; 
-		
+
+	public static void main(String[] args) {
 
 		
-		double value = Math.floor(Math.random() * 10) % 2;
-		
-		if(value == attendence) {
-			System.out.println("Emp is Present");
-			Scanner sc = new Scanner (System.in);
-		System.out.println("please enter 1 for fullTime or Enter 2 for Part Time");
-		int n = sc.nextInt();
-		sc.close();
-			switch(n){
-		case 1: 
-		
-		System.out.println("Employee Daily Wage is: " +wagePerHour*fullDayWork);
-		break;
-		case 2:
-		System.out.println("Part Employee Daily Wage is: " +wagePerHour*partTimeWorker);
+		int FullDayHr=8;
+		int PartTimeHr=4;
+		int WagePerHr=20;
+		int day=0;
+		int wage = 0;
+		//int n;
+		while (day <= 19) {
+			int n = (int) (Math.random() * 10) % 3;
+		switch (n) {
+		case 1:
+			System.out.println("present fullday");
+			wage = (wage + (WagePerHr * FullDayHr));
+			//System.out.println("fulltime emp wage"+wage);
+			day++;
 			break;
-			default:
-			System.out.println("please select only between 1 and 2");
-			}
-			}
-		else 
-		System.out.println("EMp is Absent");
-		
-}
+			case 2:
+			System.out.println("present PartTime");
+			wage = (wage + (WagePerHr * PartTimeHr));
+			//System.out.println("PartTime emp wage"+wage);
+			
+			day++;
+			break;
+		default:
+			System.out.println("absent");
+		    day++;
+		}
+		 }
+		System.out.println("total wage of a month is");
+		System.out.println(wage);
+	}
 }
