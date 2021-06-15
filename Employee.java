@@ -1,29 +1,34 @@
 public class Employee{
-	public static void main(String[] args){
+	public static void main(String [] args) {
+		int attendence = 1;
+		int wagePerHour = 20;
+		int fullDayWork = 8;
+		int partTimeWorker = 8; 
 		
-		int isFullTime=1;
-		int isPartTime=2;
-		int WagePerHr=20;
-		int FullDayHr=8;
-		int empHr;
+
 		
-		double empCheck = Math.floor(Math.random()*10)%3;
-		if(empCheck == isFullTime)
-		{
-			System.out.println("Employee is Present");
-		empHr=8;
-			
-			
-		}
-		else if(empCheck == isPartTime)
-		{
-			System.out.println("Employee is Abscent");
-			empHr=4;
-		}else
-		{
-			empHr=0;
-			
-		}
+		double value = Math.floor(Math.random() * 10) % 2;
 		
-		int DailyEmpWage=WagePerHr*empHr;
-		Syst
+		if(value == attendence) {
+			System.out.println("Emp is Present");
+			Scanner sc = new Scanner (System.in);
+		System.out.println("please enter 1 for fullTime or Enter 2 for Part Time");
+		int n = sc.nextInt();
+		sc.close();
+			switch(n){
+		case 1: 
+		
+		System.out.println("Employee Daily Wage is: " +wagePerHour*fullDayWork);
+		break;
+		case 2:
+		System.out.println("Part Employee Daily Wage is: " +wagePerHour*partTimeWorker);
+			break;
+			default:
+			System.out.println("please select only between 1 and 2");
+			}
+			}
+		else 
+		System.out.println("EMp is Absent");
+		
+}
+}
